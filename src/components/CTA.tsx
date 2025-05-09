@@ -11,9 +11,9 @@ const CTA: React.FC = () => {
   };
 
   return (
-    <section className="py-16">
+    <section className="py-10 md:py-16">
       <Container>
-        <div className="relative overflow-hidden rounded-2xl bg-indigo-600 py-16 px-8 shadow-xl">
+        <div className="relative overflow-hidden rounded-xl sm:rounded-2xl bg-indigo-600 py-10 sm:py-16 px-4 sm:px-8 shadow-xl">
           <div className="absolute top-0 right-0 -translate-y-12 translate-x-1/4 transform opacity-20 blur-3xl">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -42,18 +42,18 @@ const CTA: React.FC = () => {
           </div>
 
           <div className="relative mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-white">
               Start Your Development Journey Today
             </h2>
-            <p className="mt-6 text-lg leading-8 text-indigo-100">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg leading-7 sm:leading-8 text-indigo-100">
               Join hundreds of successful developers who have transformed their
               careers with our comprehensive courses and supportive community.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-6">
+            <div className="mt-6 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
               <Button
                 variant="secondary"
                 size="lg"
-                className="bg-white text-indigo-600 hover:bg-indigo-50"
+                className="w-full sm:w-auto bg-white text-indigo-600 hover:bg-indigo-50"
                 onClick={scrollToPricing}
               >
                 Join for $25/mo
@@ -61,12 +61,12 @@ const CTA: React.FC = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white text-white hover:bg-indigo-500"
+                className="w-full sm:w-auto mt-3 sm:mt-0 border-white text-white hover:bg-indigo-500"
               >
                 View Curriculum
               </Button>
             </div>
-            <p className="mt-6 text-indigo-100 text-sm">
+            <p className="mt-4 sm:mt-6 text-indigo-100 text-xs sm:text-sm">
               No commitment required. 14-day money-back guarantee.
             </p>
           </div>
