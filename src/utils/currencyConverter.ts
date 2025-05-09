@@ -8,6 +8,8 @@ interface CurrencyData {
 // Currency exchange rates based on 1 USD
 export const currencies: Record<string, CurrencyData> = {
   USD: { code: "USD", symbol: "$", rate: 1, name: "US Dollar" },
+  EUR: { code: "EUR", symbol: "€", rate: 0.92, name: "Euro" },
+  CAD: { code: "CAD", symbol: "C$", rate: 1.36, name: "Canadian Dollar" },
   XAF: {
     code: "XAF",
     symbol: "FCFA",
@@ -25,6 +27,30 @@ export const defaultCurrency = "USD";
 // Get currency based on country code (common two-letter country codes)
 export const getCurrencyByCountry = (countryCode: string): string => {
   const countryToCurrency: Record<string, string> = {
+    // European countries using Euro
+    DE: "EUR", // Germany
+    FR: "EUR", // France
+    IT: "EUR", // Italy
+    ES: "EUR", // Spain
+    PT: "EUR", // Portugal
+    NL: "EUR", // Netherlands
+    BE: "EUR", // Belgium
+    AT: "EUR", // Austria
+    IE: "EUR", // Ireland
+    FI: "EUR", // Finland
+    GR: "EUR", // Greece
+    SK: "EUR", // Slovakia
+    SI: "EUR", // Slovenia
+    LT: "EUR", // Lithuania
+    LV: "EUR", // Latvia
+    EE: "EUR", // Estonia
+    LU: "EUR", // Luxembourg
+    MT: "EUR", // Malta
+    CY: "EUR", // Cyprus
+
+    // North American countries
+    CA: "CAD", // Canada
+
     // Central African CFA franc countries
     CM: "XAF", // Cameroon
     CF: "XAF", // Central African Republic

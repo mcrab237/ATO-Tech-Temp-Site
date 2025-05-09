@@ -1,5 +1,5 @@
-import React from 'react';
-import Container from './Container';
+import React from "react";
+import Container from "./Container";
 
 type CurriculumItemProps = {
   number: string;
@@ -9,12 +9,12 @@ type CurriculumItemProps = {
   color: string;
 };
 
-const CurriculumItem: React.FC<CurriculumItemProps> = ({ 
-  number, 
-  title, 
-  description, 
+const CurriculumItem: React.FC<CurriculumItemProps> = ({
+  number,
+  title,
+  description,
   modules,
-  color
+  color,
 }) => {
   return (
     <div className="flex flex-col h-full">
@@ -52,8 +52,8 @@ const Curriculum: React.FC = () => {
         "Responsive Design & CSS Frameworks",
         "React & State Management",
         "Building SPAs & Performance Optimization",
-        "TypeScript & Advanced Patterns"
-      ]
+        "TypeScript & Advanced Patterns",
+      ],
     },
     {
       number: "02",
@@ -65,8 +65,8 @@ const Curriculum: React.FC = () => {
         "Database Design & SQL/NoSQL",
         "RESTful API Development",
         "Authentication & Security",
-        "Testing, Deployment & CI/CD"
-      ]
+        "Testing, Deployment & CI/CD",
+      ],
     },
     {
       number: "03",
@@ -78,19 +78,24 @@ const Curriculum: React.FC = () => {
         "iOS & Android Platform Specifics",
         "Navigation & State Management",
         "Native Modules & Device Features",
-        "App Store Deployment & Optimization"
-      ]
-    }
+        "App Store Deployment & Optimization",
+      ],
+    },
   ];
 
   return (
-    <section className="py-16">
+    <section id="courses" className="py-16">
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Comprehensive Curriculum</h2>
-          <p className="text-xl text-gray-600">Three complete tracks to take you from beginner to professional developer.</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Comprehensive Curriculum
+          </h2>
+          <p className="text-xl text-gray-600">
+            Three complete tracks to take you from beginner to professional
+            developer.
+          </p>
         </div>
-        
+
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {tracks.map((track, index) => (
             <CurriculumItem

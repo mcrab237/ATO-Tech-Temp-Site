@@ -1,7 +1,7 @@
-import React from 'react';
-import { Code, Database, Smartphone } from 'lucide-react';
-import Container from './Container';
-import Button from './Button';
+import React from "react";
+import { Code, Database, Smartphone } from "lucide-react";
+import Container from "./Container";
+import Button from "./Button";
 
 const Hero: React.FC = () => {
   return (
@@ -13,13 +13,16 @@ const Hero: React.FC = () => {
               Launch Promo: Save $100 with yearly plan
             </div>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6">
-              Master Modern Development <span className="text-indigo-600">Skills</span>
+              Master Modern Development{" "}
+              <span className="text-indigo-600">Skills</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Join our comprehensive coding courses and vibrant community to learn frontend, backend, and mobile app development from industry experts.
+              Join our comprehensive coding courses and vibrant community to
+              learn frontend, backend, and mobile app development from industry
+              experts.
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
-              <Button size="lg">
+              <Button size="lg" href="#pricing">
                 Get Started for $25/mo
               </Button>
               <Button variant="outline" size="lg">
@@ -29,8 +32,8 @@ const Hero: React.FC = () => {
             <div className="mt-8 text-gray-500 flex items-center justify-center lg:justify-start">
               <div className="flex -space-x-2">
                 {[...Array(4)].map((_, i) => (
-                  <div 
-                    key={i} 
+                  <div
+                    key={i}
                     className="inline-block h-8 w-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-medium"
                   >
                     {String.fromCharCode(65 + i)}
@@ -38,7 +41,8 @@ const Hero: React.FC = () => {
                 ))}
               </div>
               <div className="ml-4">
-                <span className="font-medium">500+</span> developers already enrolled
+                <span className="font-medium">500+</span> developers already
+                enrolled
               </div>
             </div>
           </div>
@@ -51,14 +55,18 @@ const Hero: React.FC = () => {
                     <Code className="w-5 h-5 mr-2" />
                     <h3 className="font-medium">Complete Curriculum</h3>
                   </div>
-                  <p className="text-indigo-100 text-sm">Learn all three paths with structured courses</p>
+                  <p className="text-indigo-100 text-sm">
+                    Learn all three paths with structured courses
+                  </p>
                 </div>
                 <div className="bg-gray-100 p-4 rounded-lg">
                   <div className="flex items-center mb-2">
                     <Database className="w-5 h-5 mr-2 text-indigo-600" />
                     <h3 className="font-medium">Backend</h3>
                   </div>
-                  <p className="text-gray-600 text-sm">APIs, databases, and servers</p>
+                  <p className="text-gray-600 text-sm">
+                    APIs, databases, and servers
+                  </p>
                 </div>
                 <div className="bg-gray-100 p-4 rounded-lg">
                   <div className="flex items-center mb-2">

@@ -16,6 +16,20 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const scrollToPricing = () => {
+    const pricingSection = document.getElementById("pricing");
+    if (pricingSection) {
+      pricingSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <header
       className={`sticky top-0 z-50 w-full transition-all duration-300 ${
@@ -32,18 +46,18 @@ const Header: React.FC = () => {
           </div>
 
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#about"
+            <button
+              onClick={() => scrollToSection("about")}
               className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors"
             >
               About
-            </a>
-            <a
-              href="#courses"
+            </button>
+            <button
+              onClick={() => scrollToSection("courses")}
               className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors"
             >
               Courses
-            </a>
+            </button>
             <a
               href="#community"
               className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors"
@@ -66,7 +80,7 @@ const Header: React.FC = () => {
             >
               Login
             </Button>
-            <Button variant="primary" size="sm">
+            <Button variant="primary" size="sm" onClick={scrollToPricing}>
               Join Now
             </Button>
           </nav>
@@ -88,20 +102,24 @@ const Header: React.FC = () => {
         {isMenuOpen && (
           <div className="md:hidden pt-2 pb-4">
             <div className="flex flex-col space-y-3">
-              <a
-                href="#about"
-                className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors px-2 py-1"
-                onClick={() => setIsMenuOpen(false)}
+              <button
+                className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 text-left"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("about");
+                }}
               >
                 About
-              </a>
-              <a
-                href="#courses"
-                className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors px-2 py-1"
-                onClick={() => setIsMenuOpen(false)}
+              </button>
+              <button
+                className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors px-2 py-1 text-left"
+                onClick={() => {
+                  setIsMenuOpen(false);
+                  scrollToSection("courses");
+                }}
               >
                 Courses
-              </a>
+              </button>
               <a
                 href="#community"
                 className="text-base font-medium text-gray-700 hover:text-primary-600 transition-colors px-2 py-1"
@@ -133,7 +151,10 @@ const Header: React.FC = () => {
                   variant="primary"
                   size="sm"
                   className="w-full"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false);
+                    scrollToPricing();
+                  }}
                 >
                   Join Now
                 </Button>

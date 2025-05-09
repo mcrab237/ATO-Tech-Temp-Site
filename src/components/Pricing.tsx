@@ -133,12 +133,8 @@ const Pricing: React.FC = () => {
                 ))}
               </ul>
 
-              <Button
-                className="w-full"
-                size="lg"
-                onClick={() => (window.location.href = getPaymentUrl())}
-              >
-                Get Started Now
+              <Button className="w-full" size="lg" href={getPaymentUrl()}>
+                JOIN NOW
               </Button>
 
               <p className="text-center text-sm text-gray-500 mt-4">

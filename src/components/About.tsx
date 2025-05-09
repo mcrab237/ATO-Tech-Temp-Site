@@ -5,7 +5,10 @@ import image from "../../dist/assets/adaa.jpg";
 
 const About: React.FC = () => {
   return (
-    <section className="py-16 bg-gradient-to-b from-primary-50 to-white">
+    <section
+      id="about"
+      className="py-16 bg-gradient-to-b from-primary-50 to-white"
+    >
       <Container>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div>
