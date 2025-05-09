@@ -88,11 +88,12 @@ const Curriculum: React.FC = () => {
       <Container>
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Comprehensive Curriculum
+            All Present and Future Courses Access
           </h2>
           <p className="text-xl text-gray-600">
             Three complete tracks to take you from beginner to professional
-            developer.
+            developer. All courses are updated with the latest technologies and
+            best practices.
           </p>
         </div>
 

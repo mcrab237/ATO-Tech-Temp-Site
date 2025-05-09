@@ -4,6 +4,21 @@ import Container from "./Container";
 import Button from "./Button";
 
 const Hero: React.FC = () => {
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  // Profile images from randomuser.me
+  const profileImages = [
+    "https://randomuser.me/api/portraits/men/32.jpg",
+    "https://randomuser.me/api/portraits/women/44.jpg",
+    "https://randomuser.me/api/portraits/men/86.jpg",
+    "https://randomuser.me/api/portraits/women/63.jpg",
+  ];
+
   return (
     <section className="pt-16 pb-20 md:pt-20 md:pb-28">
       <Container>
@@ -25,23 +40,27 @@ const Hero: React.FC = () => {
               <Button size="lg" href="#pricing">
                 Get Started for $25/mo
               </Button>
-              <Button variant="outline" size="lg">
-                View Curriculum
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => scrollToSection("courses")}
+              >
+                View Courses
               </Button>
             </div>
             <div className="mt-8 text-gray-500 flex items-center justify-center lg:justify-start">
               <div className="flex -space-x-2">
-                {[...Array(4)].map((_, i) => (
-                  <div
+                {profileImages.map((src, i) => (
+                  <img
                     key={i}
-                    className="inline-block h-8 w-8 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-xs font-medium"
-                  >
-                    {String.fromCharCode(65 + i)}
-                  </div>
+                    src={src}
+                    alt={`Student ${i + 1}`}
+                    className="inline-block h-8 w-8 rounded-full border-2 border-white object-cover"
+                  />
                 ))}
               </div>
               <div className="ml-4">
-                <span className="font-medium">500+</span> developers already
+                <span className="font-medium">10+</span> developers already
                 enrolled
               </div>
             </div>
