@@ -9,6 +9,7 @@ import Pricing from "./components/Pricing";
 import Testimonials from "./components/Testimonials";
 import CTA from "./components/CTA";
 import Footer from "./components/Footer";
+import { CurrencyProvider } from "./contexts/CurrencyContext";
 
 function App() {
   useEffect(() => {
@@ -40,19 +41,21 @@ function App() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      <main>
-        <Hero />
-        <About />
-        <Curriculum />
-        <Community />
-        <Testimonials />
-        <Pricing />
-        <CTA />
-      </main>
-      <Footer />
-    </div>
+    <CurrencyProvider>
+      <div className="min-h-screen bg-white">
+        <Header />
+        <main>
+          <Hero />
+          <About />
+          <Curriculum />
+          <Community />
+          <Testimonials />
+          <Pricing />
+          <CTA />
+        </main>
+        <Footer />
+      </div>
+    </CurrencyProvider>
   );
 }
 

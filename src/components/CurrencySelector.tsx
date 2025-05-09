@@ -3,14 +3,19 @@ import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
 import { currencies } from "../utils/currencyConverter";
 import type { CurrencyHook } from "../hooks/useCurrency";
+import { useCurrencyContext } from "../contexts/CurrencyContext";
 
 interface CurrencySelectorProps {
-  currencyHook: CurrencyHook;
+  currencyHook?: CurrencyHook;
 }
 
 const CurrencySelector: React.FC<CurrencySelectorProps> = ({
-  currencyHook,
+  currencyHook: propsCurrencyHook,
 }) => {
+  // Use either the props-provided hook or the context
+  const contextCurrencyHook = useCurrencyContext();
+  const currencyHook = propsCurrencyHook || contextCurrencyHook;
+
   const { selectedCurrency, setSelectedCurrency, availableCurrencies } =
     currencyHook;
   const [isOpen, setIsOpen] = useState(false);

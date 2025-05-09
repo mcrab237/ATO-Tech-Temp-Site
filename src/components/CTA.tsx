@@ -1,6 +1,8 @@
 import React from "react";
 import Container from "./Container";
 import Button from "./Button";
+import { useCurrencyContext } from "../contexts/CurrencyContext";
+import { Loader2 } from "lucide-react";
 
 const CTA: React.FC = () => {
   const scrollToPricing = () => {
@@ -9,6 +11,12 @@ const CTA: React.FC = () => {
       pricingSection.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Base price in USD
+  const monthlyPriceUSD = 25;
+
+  // Use the currency context
+  const { formatAmount, isLoading } = useCurrencyContext();
 
   return (
     <section className="py-10 md:py-16">
@@ -56,7 +64,14 @@ const CTA: React.FC = () => {
                 className="w-full sm:w-auto bg-white text-indigo-600 hover:bg-indigo-50"
                 onClick={scrollToPricing}
               >
-                Join for $25/mo
+                {isLoading ? (
+                  <div className="flex items-center">
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    <span>Loading...</span>
+                  </div>
+                ) : (
+                  <>Join for {formatAmount(monthlyPriceUSD)}/mo</>
+                )}
               </Button>
               <Button
                 variant="outline"

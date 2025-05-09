@@ -1,7 +1,8 @@
 import React from "react";
-import { Code, Database, Smartphone } from "lucide-react";
+import { Code, Database, Smartphone, Loader2 } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
+import { useCurrencyContext } from "../contexts/CurrencyContext";
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -10,6 +11,13 @@ const Hero: React.FC = () => {
       section.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  // Base prices in USD
+  const monthlyPriceUSD = 25;
+  const savingsUSD = 100;
+
+  // Use the currency context
+  const { formatAmount, isLoading } = useCurrencyContext();
 
   // Profile images from randomuser.me
   const profileImages = [
@@ -25,7 +33,8 @@ const Hero: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
           <div className="text-center lg:text-left">
             <div className="inline-block px-3 py-1.5 md:px-4 md:py-2 bg-indigo-100 text-indigo-700 rounded-full font-medium text-xs md:text-sm mb-4 md:mb-6 animate-fadeIn">
-              Launch Promo: Save $100 with yearly plan
+              Launch Promo: Save {isLoading ? "..." : formatAmount(savingsUSD)}{" "}
+              with yearly plan
             </div>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-4 md:mb-6">
               Master Modern Development{" "}
@@ -38,7 +47,14 @@ const Hero: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-3 md:gap-4">
               <Button size="lg" className="w-full sm:w-auto" href="#pricing">
-                Get Started for $25/mo
+                {isLoading ? (
+                  <div className="flex items-center">
+                    <Loader2 className="h-4 w-4 mr-2 animate-spin" />
+                    <span>Loading...</span>
+                  </div>
+                ) : (
+                  <>Join Now for {formatAmount(monthlyPriceUSD)}/mo</>
+                )}
               </Button>
               <Button
                 variant="outline"

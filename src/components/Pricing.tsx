@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { Check, Loader2 } from "lucide-react";
 import Container from "./Container";
 import Button from "./Button";
-import { useCurrency } from "../hooks/useCurrency";
+import { useCurrencyContext } from "../contexts/CurrencyContext";
 import CurrencySelector from "./CurrencySelector";
 
 const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(true);
-  const currencyHook = useCurrency();
+  const currencyHook = useCurrencyContext();
   const { formatAmount, isLoading, selectedCurrency } = currencyHook;
 
   // Base prices in USD
@@ -42,7 +42,7 @@ const Pricing: React.FC = () => {
                 <span>Detecting location...</span>
               </div>
             ) : (
-              <CurrencySelector currencyHook={currencyHook} />
+              <CurrencySelector />
             )}
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
