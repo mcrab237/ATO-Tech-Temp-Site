@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
               <span className="text-indigo-600">Skills</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
-              Join our comprehensive coding courses and vibrant community to
+              Join my comprehensive coding courses and vibrant community to
               learn frontend, backend, and mobile app development from industry
               experts.
             </p>

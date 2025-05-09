@@ -1,5 +1,5 @@
 import React from "react";
-import { BookOpen, Twitter, Facebook, Instagram, Mail } from "lucide-react";
+import { Code2, Twitter, Facebook, Instagram, Mail } from "lucide-react";
 import Container from "./Container";
 
 const Footer: React.FC = () => {
@@ -9,8 +9,8 @@ const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
           <div>
             <div className="flex items-center mb-4">
-              <BookOpen className="h-7 w-7 text-indigo-400" />
-              <span className="ml-2 text-xl font-bold">DevMastery</span>
+              <Code2 className="h-7 w-7 text-indigo-400" strokeWidth={2} />
+              <span className="ml-2 text-xl font-bold">ATO Tech</span>
             </div>
             <p className="text-gray-400 mb-4">
               Comprehensive developer education for the modern web.
@@ -89,14 +89,6 @@ const Footer: React.FC = () => {
                   href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
-                  Discord Server
-                </a>
-              </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
                   Forums
                 </a>
               </li>
@@ -124,20 +116,13 @@ const Footer: React.FC = () => {
             <ul className="space-y-2">
               <li>
                 <a
-                  href="#"
+                  href="#about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   About Us
                 </a>
               </li>
-              <li>
-                <a
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  Careers
-                </a>
-              </li>
+
               <li>
                 <a
                   href="#"
@@ -161,7 +146,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <p className="text-gray-500 text-sm">
-              &copy; {new Date().getFullYear()} DevMastery. All rights reserved.
+              &copy; {new Date().getFullYear()} ATO Tech. All rights reserved.
             </p>
             <div className="mt-4 md:mt-0">
               <a
