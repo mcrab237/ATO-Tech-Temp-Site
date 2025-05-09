@@ -75,7 +75,7 @@ const Header: React.FC = () => {
               size="sm"
               onClick={() =>
                 (window.location.href =
-                  "https://atotech.dev/portal/?fcom_action=auth")
+                  "https://community.atotech.dev/portal/?fcom_action=auth")
               }
             >
               Login
@@ -142,7 +142,7 @@ const Header: React.FC = () => {
                   onClick={() => {
                     setIsMenuOpen(false);
                     window.location.href =
-                      "https://atotech.dev/portal/?fcom_action=auth";
+                      "https://community.atotech.dev/portal/?fcom_action=auth";
                   }}
                 >
                   Login

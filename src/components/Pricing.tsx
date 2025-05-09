@@ -18,7 +18,7 @@ const Pricing: React.FC = () => {
   // Payment URLs
   const getPaymentUrl = () => {
     const productId = isAnnual ? "1225" : "1224";
-    return `https://atotech.dev/?currency=${selectedCurrency}&add-to-cart=${productId}`;
+    return `https://community.atotech.dev/?currency=${selectedCurrency}&add-to-cart=${productId}`;
   };
 
   const features = [
