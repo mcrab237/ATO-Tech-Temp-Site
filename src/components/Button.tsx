@@ -5,7 +5,9 @@ type ButtonProps = {
   variant?: "primary" | "secondary" | "outline";
   size?: "sm" | "md" | "lg";
   className?: string;
-  onClick?: () => void;
+  onClick?: (
+    event: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>
+  ) => void;
   type?: "button" | "submit" | "reset";
   href?: string;
 };

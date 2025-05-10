@@ -5,6 +5,13 @@ import Button from "./Button";
 import { useCurrencyContext } from "../contexts/CurrencyContext";
 import CurrencySelector from "./CurrencySelector";
 
+// Add global declaration for Facebook Pixel
+declare global {
+  interface Window {
+    fbq?: (track: string, event: string, params?: any) => void;
+  }
+}
+
 const Pricing: React.FC = () => {
   const [isAnnual, setIsAnnual] = useState(true);
   const currencyHook = useCurrencyContext();
@@ -19,6 +26,16 @@ const Pricing: React.FC = () => {
   const getPaymentUrl = () => {
     const productId = isAnnual ? "1225" : "1224";
     return `https://community.atotech.dev/?currency=${selectedCurrency}&add-to-cart=${productId}`;
+  };
+
+  // Track lead event when JOIN NOW button is clicked
+  const handleJoinClick = (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
+  ) => {
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Lead");
+    }
+    // The link will still work normally
   };
 
   const features = [
@@ -138,7 +155,12 @@ const Pricing: React.FC = () => {
                 ))}
               </ul>
 
-              <Button className="w-full" size="lg" href={getPaymentUrl()}>
+              <Button
+                className="w-full"
+                size="lg"
+                href={getPaymentUrl()}
+                onClick={handleJoinClick}
+              >
                 JOIN NOW
               </Button>
 

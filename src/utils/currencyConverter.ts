@@ -20,6 +20,7 @@ export const currencies: Record<string, CurrencyData> = {
   NGN: { code: "NGN", symbol: "₦", rate: 1580, name: "Nigerian Naira" },
   KES: { code: "KES", symbol: "KSh", rate: 129.1, name: "Kenyan Shilling" },
   PHP: { code: "PHP", symbol: "₱", rate: 56.8, name: "Philippine Peso" },
+  ZMW: { code: "ZMW", symbol: "K", rate: 25.75, name: "Zambian Kwacha" },
 };
 
 // Default fallback currency
@@ -64,6 +65,7 @@ export const getCurrencyByCountry = (countryCode: string): string => {
     GH: "GHS", // Ghana
     NG: "NGN", // Nigeria
     KE: "KES", // Kenya
+    ZM: "ZMW", // Zambia
 
     // Asian countries
     PH: "PHP", // Philippines

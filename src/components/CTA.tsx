@@ -4,12 +4,30 @@ import Button from "./Button";
 import { useCurrencyContext } from "../contexts/CurrencyContext";
 import { Loader2 } from "lucide-react";
 
+// Add global declaration for Facebook Pixel if not already defined elsewhere
+declare global {
+  interface Window {
+    fbq?: (track: string, event: string, params?: any) => void;
+  }
+}
+
 const CTA: React.FC = () => {
   const scrollToPricing = () => {
     const pricingSection = document.getElementById("pricing");
     if (pricingSection) {
       pricingSection.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  // Track lead event for Facebook Pixel
+  const trackLeadEvent = (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement>
+  ) => {
+    if (typeof window !== "undefined" && window.fbq) {
+      window.fbq("track", "Lead");
+    }
+    // Still scroll to pricing after tracking
+    scrollToPricing();
   };
 
   // Base price in USD
@@ -62,7 +80,7 @@ const CTA: React.FC = () => {
                 variant="secondary"
                 size="lg"
                 className="w-full sm:w-auto bg-white text-indigo-600 hover:bg-indigo-50"
-                onClick={scrollToPricing}
+                onClick={trackLeadEvent}
               >
                 {isLoading ? (
                   <div className="flex items-center">
