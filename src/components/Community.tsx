@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
-import { MessagesSquare, Users, Headphones, Award } from "lucide-react";
+import { MessagesSquare, Users, Award } from "lucide-react";
 import Container from "./Container";
 
 type CommunityFeatureProps = {

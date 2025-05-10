@@ -22,13 +22,14 @@ const Pricing: React.FC = () => {
   };
 
   const features = [
-    "Access to all courses (Frontend, Backend, Mobile)",
+    "Access to all present and future courses (Frontend, Backend, Mobile)",
     "Community membership",
-    "Weekly live coding sessions",
     "Project reviews & feedback",
-    "Private Discord community",
+    "Private community",
     "Downloadable resources & code samples",
     "Course completion certificates",
+    "Priority support",
+    "Early access to new content",
   ];
 
   return (
