@@ -10,6 +10,7 @@ type ButtonProps = {
   ) => void;
   type?: "button" | "submit" | "reset";
   href?: string;
+  id?: string;
 };
 
 const Button: React.FC<ButtonProps> = ({
@@ -20,6 +21,7 @@ const Button: React.FC<ButtonProps> = ({
   onClick,
   type = "button",
   href,
+  id,
 }) => {
   const baseStyles =
     "inline-flex items-center justify-center rounded-lg font-medium transition-all focus:outline-none focus:ring-2 focus:ring-offset-2";
@@ -43,14 +45,14 @@ const Button: React.FC<ButtonProps> = ({
 
   if (href) {
     return (
-      <a href={href} className={styles} onClick={onClick}>
+      <a href={href} className={styles} onClick={onClick} id={id}>
         {children}
       </a>
     );
   }
 
   return (
-    <button type={type} className={styles} onClick={onClick}>
+    <button type={type} className={styles} onClick={onClick} id={id}>
       {children}
     </button>
   );

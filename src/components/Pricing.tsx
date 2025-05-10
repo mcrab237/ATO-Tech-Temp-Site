@@ -160,6 +160,7 @@ const Pricing: React.FC = () => {
                 size="lg"
                 href={getPaymentUrl()}
                 onClick={handleJoinClick}
+                id="enrollBtn"
               >
                 JOIN NOW
               </Button>
